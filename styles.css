@@ -52,11 +52,17 @@
     align-items: center;
 }
 
+.color {
+    padding-left: 25px;
+}
+
 .color-square {
     border: 1px solid black;
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     border-radius: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .colortemp,
