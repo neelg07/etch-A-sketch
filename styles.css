@@ -39,7 +39,7 @@
     flex: 1 1 100%;
     display: flex;
     flex-flow: column;
-    row-gap: 30px;
+    row-gap: 50px;
     margin-top: 40px;
 }
 
@@ -65,12 +65,13 @@
     margin-right: 10px;
 }
 
-.colortemp,
-.blacktemp,
-.rainbowtemp {
+.color-mode,
+.black-mode,
+.rainbow-mode {
     border: 1px solid black;
+    border-radius: 10px;
     width: 200px;
-    height: 75px;
+    height: 50px;
 }
 
 .main {
