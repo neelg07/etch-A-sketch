@@ -1,0 +1,86 @@
+.square {
+    width: 960px;
+    height: 600px;
+    position: relative;
+    border: 5px solid red;
+}
+
+.square:after {
+    display: block;
+    padding-bottom: 100%;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+}
+
+.header {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.para {
+    width: 55%;
+    text-align: center;
+    font-size: larger;
+    line-height: 30px;
+}
+
+.body {
+    display: flex;
+}
+
+.hud {
+    flex: 1 1 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.color,
+.color-select,
+.black-select,
+.rainbow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color-square {
+    border: 1px solid black;
+    width: 75px;
+    height: 75px;
+}
+
+.colortemp,
+.blacktemp,
+.rainbowtemp {
+    border: 1px solid black;
+    width: 200px;
+    height: 75px;
+}
+
+.main {
+    display: flex;
+    flex-flow: column;
+}
+
+.grid {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slidetemp {
+    border: 1px solid black;
+    width: 500px;
+    height: 100px;
+}
