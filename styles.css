@@ -1,8 +1,9 @@
 .square {
-    width: 960px;
+    width: 900px;
     height: 600px;
     position: relative;
     border: 5px solid red;
+    margin-right: 25px;
 }
 
 .square:after {
@@ -20,6 +21,7 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 45px;
 }
 
 .para {
@@ -37,6 +39,8 @@
     flex: 1 1 100%;
     display: flex;
     flex-flow: column;
+    row-gap: 30px;
+    margin-top: 40px;
 }
 
 .color,
@@ -52,6 +56,7 @@
     border: 1px solid black;
     width: 75px;
     height: 75px;
+    border-radius: 10px;
 }
 
 .colortemp,
@@ -77,6 +82,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 
 .slidetemp {
