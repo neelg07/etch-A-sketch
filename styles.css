@@ -68,10 +68,44 @@
 .color-mode,
 .black-mode,
 .rainbow-mode {
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 10px;
     width: 200px;
     height: 50px;
+    color: white;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.color-mode {
+    background: linear-gradient(111.1deg, rgb(0, 40, 70) -4.8%, rgb(255, 115, 115) 82.7%, rgb(255, 175, 123) 97.2%);
+}
+
+.black-mode {
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+}
+
+.rainbow-mode {
+    color: black;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 1) 0%,
+        rgba(255, 154, 0, 1) 10%,
+        rgba(208, 222, 33, 1) 20%,
+        rgba(79, 220, 74, 1) 30%,
+        rgba(63, 218, 216, 1) 40%,
+        rgba(47, 201, 226, 1) 50%,
+        rgba(28, 127, 238, 1) 60%,
+        rgba(95, 21, 242, 1) 70%,
+        rgba(186, 12, 248, 1) 80%,
+        rgba(251, 7, 217, 1) 90%,
+        rgba(255, 0, 0, 1) 100%
+    );
+}
+
+input:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .main {
@@ -136,3 +170,4 @@
     margin-top: 20px;
     margin-bottom: 10px;
   }
+/* End of slider */
