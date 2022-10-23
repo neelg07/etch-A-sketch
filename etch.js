@@ -23,27 +23,38 @@ const square = document.querySelector('.square');
 
 const changeSize = document.querySelector('.gridSize');     // Change Size button
 
-changeSize.addEventListener('click', setGrid(value));
+changeSize.addEventListener('click', () => {
+    setGrid(value);
+});
 
 
-function setGrid(value) {                                   // function implementation for grid size 
+function setGrid(num) {                                   // function implementation for grid size 
 
-    let cellWidth = (50 / value) + 'vw';
-    let cellHeight = (37 / value) + 'vw';
+    while (square.firstChild) {                 
+        square.removeChild(square.lastChild);               // Clear divs for new resolution 
+    }
 
-    for (let i = 0; i < value; ++i) {
+    let cellWidth = (50 / num) + 'vw';                    // store cell heights/widths
+    let cellHeight = (37 / num) + 'vw';
+
+    for (let i = 0; i < num; ++i) {                       // creating grid
 
         let columnDiv = document.createElement('div');
         columnDiv.className = 'grid-column';
         columnDiv.setAttribute('style', `height: ${cellHeight};`);
         
-        for (let j = 0; j < value; ++j) {
+        for (let j = 0; j < num; ++j) {
 
             let rowDiv = document.createElement('div');
             rowDiv.className = 'grid-row';
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
             columnDiv.appendChild(rowDiv);
         }
-        square.appendChild(columnDiv);
+        square.appendChild(columnDiv);                        // append everything to square container div
     }
 }
+
+
+window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads
+    setGrid(value);
+})
