@@ -34,6 +34,7 @@
 
 .body {
     display: flex;
+    padding-bottom: 30px;
 }
 
 .hud {
@@ -47,7 +48,9 @@
 .color,
 .color-select,
 .black-select,
-.rainbow {
+.rainbow,
+.eraser,
+.clear {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +71,9 @@
 
 .color-mode,
 .black-mode,
-.rainbow-mode {
+.rainbow-mode,
+.eraser-mode,
+.clear-mode {
     border: 2px solid black;
     border-radius: 10px;
     width: 200px;
@@ -84,6 +89,16 @@
 
 .black-mode {
     background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+}
+
+.eraser-mode {
+    color: black;
+    background: pink;
+}
+
+.clear-mode {
+    color: black;
+    background: white;
 }
 
 .rainbow-mode {
@@ -120,6 +135,7 @@ input:hover {
     align-items: center;
     padding: 20px;
     padding-bottom: 35px;
+    margin-top: 25px;
 }
 
 
@@ -175,8 +191,12 @@ input:hover {
 
 /* Grid Pad CSS */
 .grid-row {
-    background: gold;
     text-align: center;
+}
+
+.grid-row:hover {
+    background-color: gold;
+    opacity: 0.15;
 }
 
 .grid-column {

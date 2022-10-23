@@ -18,7 +18,6 @@ gridSize.addEventListener("input", function() {
 });
 
 
-
 const square = document.querySelector('.square');
 
 const changeSize = document.querySelector('.gridSize');     // Change Size button
@@ -58,3 +57,11 @@ function setGrid(num) {                                   // function implementa
 window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads
     setGrid(value);
 })
+
+
+
+// Color in grid function
+
+
+// Black Mode Coloring Function
+
