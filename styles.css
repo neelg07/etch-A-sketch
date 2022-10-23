@@ -202,3 +202,8 @@ input:hover {
 .grid-column {
     flex: 1;
 }
+
+/* Black Color Grid */
+.cell-black {
+    background-color:black;
+}
