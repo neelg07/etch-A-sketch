@@ -4,6 +4,7 @@
     position: relative;
     border: 5px solid red;
     margin-right: 25px;
+    display: flex;
 }
 
 .square:after {
@@ -171,3 +172,13 @@ input:hover {
     margin-bottom: 10px;
   }
 /* End of slider */
+
+/* Grid Pad CSS */
+.grid-row {
+    background: gold;
+    text-align: center;
+}
+
+.grid-column {
+    flex: 1;
+}

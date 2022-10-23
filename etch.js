@@ -17,3 +17,33 @@ gridSize.addEventListener("input", function() {
     value = parseInt(this.value);
 });
 
+
+
+const square = document.querySelector('.square');
+
+const changeSize = document.querySelector('.gridSize');     // Change Size button
+
+changeSize.addEventListener('click', setGrid(value));
+
+
+function setGrid(value) {                                   // function implementation for grid size 
+
+    let cellWidth = (50 / value) + 'vw';
+    let cellHeight = (37 / value) + 'vw';
+
+    for (let i = 0; i < value; ++i) {
+
+        let columnDiv = document.createElement('div');
+        columnDiv.className = 'grid-column';
+        columnDiv.setAttribute('style', `height: ${cellHeight};`);
+        
+        for (let j = 0; j < value; ++j) {
+
+            let rowDiv = document.createElement('div');
+            rowDiv.className = 'grid-row';
+            rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
+            columnDiv.appendChild(rowDiv);
+        }
+        square.appendChild(columnDiv);
+    }
+}
