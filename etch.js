@@ -49,7 +49,7 @@ function setGrid(num) {                                   // function implementa
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
 
 
-            rowDiv.addEventListener("click", function(event){                                   // Change rowDiv color upon click 
+            rowDiv.addEventListener("click", function(event) {               // Change rowDiv color upon click
                 this.style.backgroundColor = 'green';
             });
 
@@ -61,7 +61,7 @@ function setGrid(num) {                                   // function implementa
 
 
 window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads
-    setGrid(value);
+    setGrid(value);                                     // Set to blackmode as default
     blackMode();
 })
 
