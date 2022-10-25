@@ -23,15 +23,14 @@ const square = document.querySelector('.square');
 const changeSize = document.querySelector('.gridSize');     // Change Size button
 
 changeSize.addEventListener('click', () => {
+    while (square.firstChild) {                 
+        square.removeChild(square.lastChild);               // Clear divs for new resolution 
+    }
     setGrid(value);
 });
 
 
 function setGrid(num) {                                   // function implementation for grid size 
-
-    while (square.firstChild) {                 
-        square.removeChild(square.lastChild);               // Clear divs for new resolution 
-    }
 
     let cellWidth = (50 / num) + 'vw';                    // store cell heights/widths
     let cellHeight = (37 / num) + 'vw';
@@ -72,6 +71,9 @@ window.addEventListener('load', (event) => {            // Set grid on first pag
 const clear = document.querySelector('.clear-mode');                // clear button
 
 clear.addEventListener('click', () => {
+    while (square.firstChild) {                 
+        square.removeChild(square.lastChild);               // Clear divs for new resolution 
+    }
     setGrid(value);
 })
 
