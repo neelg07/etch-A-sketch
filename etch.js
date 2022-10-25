@@ -48,9 +48,10 @@ function setGrid(num) {                                   // function implementa
             rowDiv.className = 'grid-row';
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
 
+            let color = changeColor();
 
             rowDiv.addEventListener("click", function(event) {               // Change rowDiv color upon click
-                this.style.backgroundColor = 'green';
+                this.style.backgroundColor = color;
             });
 
             columnDiv.appendChild(rowDiv);
@@ -133,3 +134,16 @@ rainbowBtn.addEventListener('click', () => {                      // rainbow mod
     rainbowBtn.disabled = true;
     rainbowBtn.setAttribute('style', 'background: gray;');
 });
+
+function changeColor() {
+    if (blackBtn.disabled == true) {
+        return 'black';
+    } else if (eraserBtn.disabled == true) {
+        return 'white';
+    } else if (colorBtn.disabled == true) {
+        let x = colorSquare.value;
+        return x;
+    } else {
+        return 'green';
+    }
+};
