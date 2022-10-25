@@ -48,12 +48,9 @@ function setGrid(num) {                                   // function implementa
             rowDiv.className = 'grid-row';
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
 
-            rowDiv.addEventListener("click", function(event){                               
-                this.style.backgroundColor = 'black';
-            });                                                                                 // Event listeners to change color
 
-            rowDiv.addEventListener("mousedown", function(event){
-                this.style.backgroundColor = 'black';
+            rowDiv.addEventListener("click", function(event){                                   // Event listeners to change color
+                this.style.backgroundColor = 'green';
             });
 
             columnDiv.appendChild(rowDiv);
@@ -76,3 +73,60 @@ clear.addEventListener('click', () => {
     setGrid(value);
 })
 
+
+// All other button modes
+const colorSquare = document.querySelector('.color-square');
+const colorBtn = document.querySelector('.color-mode');
+const blackBtn = document.querySelector('.black-mode');
+const eraserBtn = document.querySelector('.eraser-mode');
+const rainbowBtn = document.querySelector('.rainbow-mode');
+
+const DEFAULT_COLOR = 'black';
+
+
+colorBtn.addEventListener('click', () => {                          // color mode button
+    colorBtn.disabled = true;
+    colorBtn.setAttribute('style', 'background: gray; color: black;');
+    blackBtn.disabled = false;
+    blackBtn.removeAttribute('style');
+    eraserBtn.disabled = false;
+    eraserBtn.removeAttribute('style');
+    rainbowBtn.disabled = false;
+    rainbowBtn.removeAttribute('style');
+});
+
+
+blackBtn.addEventListener('click', () => {                          // black mode button
+    blackBtn.disabled = true;
+    blackBtn.setAttribute('style', 'background: gray; color: black;');
+    colorBtn.disabled = false;
+    colorBtn.removeAttribute('style');
+    eraserBtn.disabled = false;
+    eraserBtn.removeAttribute('style');
+    rainbowBtn.disabled = false;
+    rainbowBtn.removeAttribute('style');
+});
+
+
+eraserBtn.addEventListener('click', () => {                          // eraser mode button
+    blackBtn.disabled = false;
+    blackBtn.removeAttribute('style');
+    colorBtn.disabled = false;
+    colorBtn.removeAttribute('style');
+    eraserBtn.disabled = true;
+    eraserBtn.setAttribute('style', 'background: gray;');
+    rainbowBtn.disabled = false;
+    rainbowBtn.removeAttribute('style');
+});
+
+
+rainbowBtn.addEventListener('click', () => {                      // rainbow mode button
+    blackBtn.disabled = false;
+    blackBtn.removeAttribute('style');
+    colorBtn.disabled = false;
+    colorBtn.removeAttribute('style');
+    eraserBtn.disabled = false;
+    eraserBtn.removeAttribute('style');
+    rainbowBtn.disabled = true;
+    rainbowBtn.setAttribute('style', 'background: gray;');
+});
