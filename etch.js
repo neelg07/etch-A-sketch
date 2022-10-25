@@ -62,6 +62,7 @@ function setGrid(num) {                                   // function implementa
 
 window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads
     setGrid(value);
+    blackMode();
 })
 
 
@@ -83,6 +84,17 @@ const rainbowBtn = document.querySelector('.rainbow-mode');
 
 const DEFAULT_COLOR = 'black';
 
+function blackMode() {
+    blackBtn.disabled = true;
+    blackBtn.setAttribute('style', 'background: gray; color: black;');
+    colorBtn.disabled = false;
+    colorBtn.removeAttribute('style');
+    eraserBtn.disabled = false;
+    eraserBtn.removeAttribute('style');
+    rainbowBtn.disabled = false;
+    rainbowBtn.removeAttribute('style');
+};
+
 
 colorBtn.addEventListener('click', () => {                          // color mode button
     colorBtn.disabled = true;
@@ -96,16 +108,7 @@ colorBtn.addEventListener('click', () => {                          // color mod
 });
 
 
-blackBtn.addEventListener('click', () => {                          // black mode button
-    blackBtn.disabled = true;
-    blackBtn.setAttribute('style', 'background: gray; color: black;');
-    colorBtn.disabled = false;
-    colorBtn.removeAttribute('style');
-    eraserBtn.disabled = false;
-    eraserBtn.removeAttribute('style');
-    rainbowBtn.disabled = false;
-    rainbowBtn.removeAttribute('style');
-});
+blackBtn.addEventListener('click', blackMode);
 
 
 eraserBtn.addEventListener('click', () => {                          // eraser mode button
