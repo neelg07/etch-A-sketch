@@ -49,7 +49,7 @@ function setGrid(num) {                                   // function implementa
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
 
 
-            rowDiv.addEventListener("click", function(event){                                   // Event listeners to change color
+            rowDiv.addEventListener("click", function(event){                                   // Change rowDiv color upon click 
                 this.style.backgroundColor = 'green';
             });
 
