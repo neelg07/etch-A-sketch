@@ -84,7 +84,7 @@ const rainbowBtn = document.querySelector('.rainbow-mode');
 
 const DEFAULT_COLOR = 'black';
 
-function blackMode() {
+function blackMode() {                                                  // default black mode is on 
     blackBtn.disabled = true;
     blackBtn.setAttribute('style', 'background: gray; color: black;');
     colorBtn.disabled = false;
@@ -108,7 +108,7 @@ colorBtn.addEventListener('click', () => {                          // color mod
 });
 
 
-blackBtn.addEventListener('click', blackMode);
+blackBtn.addEventListener('click', blackMode);                      // black mode button
 
 
 eraserBtn.addEventListener('click', () => {                          // eraser mode button
