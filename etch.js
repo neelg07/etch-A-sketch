@@ -47,6 +47,15 @@ function setGrid(num) {                                   // function implementa
             let rowDiv = document.createElement('div');
             rowDiv.className = 'grid-row';
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
+
+            rowDiv.addEventListener("click", function(event){                               
+                this.style.backgroundColor = 'black';
+            });                                                                                 // Event listeners to change color
+
+            rowDiv.addEventListener("mousedown", function(event){
+                this.style.backgroundColor = 'black';
+            });
+
             columnDiv.appendChild(rowDiv);
         }
         square.appendChild(columnDiv);                        // append everything to square container div
@@ -60,8 +69,10 @@ window.addEventListener('load', (event) => {            // Set grid on first pag
 
 
 
-// Color in grid function
+// Button selection
+const clear = document.querySelector('.clear-mode');                // clear button
 
-
-// Black Mode Coloring Function
+clear.addEventListener('click', () => {
+    setGrid(value);
+})
 
