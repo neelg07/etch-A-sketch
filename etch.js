@@ -49,7 +49,28 @@ function setGrid(num, color) {                                   // function imp
 
 
 
-            rowDiv.addEventListener("click", function(event) {               // Change rowDiv color upon click
+            rowDiv.addEventListener("mouseover", function(event) {               // Change rowDiv color upon click
+                
+                if (isClicked) {                                                // color hovered cells while mousedown
+
+                    if (blackBtn.disabled === true) {
+                        let color = DEFAULT_COLOR;
+                        this.style.backgroundColor = color;
+                    } else if (eraserBtn.disabled === true) {
+                        let color = 'white';
+                        this.style.backgroundColor = color;
+                    } else if (colorBtn.disabled === true) {
+                        let color = colorSquare.value;
+                        this.style.backgroundColor = color;
+                    } else {
+                        let color = 'red';
+                        this.style.backgroundColor = color;
+                    }
+                }
+            });
+
+            rowDiv.addEventListener('click', function(event) {
+                
                 if (blackBtn.disabled === true) {
                     let color = DEFAULT_COLOR;
                     this.style.backgroundColor = color;
@@ -63,7 +84,9 @@ function setGrid(num, color) {                                   // function imp
                     let color = 'red';
                     this.style.backgroundColor = color;
                 }
-            });
+            })
+
+
 
             columnDiv.appendChild(rowDiv);
         }
@@ -157,15 +180,16 @@ rainbowBtn.addEventListener('click', () => {                      // rainbow mod
     setGrid(value);
 });
 
-/* function changeColor() {
-    if (blackBtn.disabled === true) {
-        return DEFAULT_COLOR;
-    } else if (eraserBtn.disabled === true) {
-        return 'white';
-    } else if (colorBtn.disabled === true) {
-        let x = colorSquare.value;
-        return x;
-    } else {
-        return 'red';
+
+// Mechanism to check for mouse drag function for coloring the grid
+let isClicked = false;
+
+window.addEventListener('mousedown', e => {
+    isClicked = true;
+});
+
+window.addEventListener('mouseup', e => {
+    if (isClicked === true) {
+        isClicked = false;
     }
-}; */
+});
