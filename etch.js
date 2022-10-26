@@ -30,7 +30,7 @@ changeSize.addEventListener('click', () => {
 });
 
 
-function setGrid(num) {                                   // function implementation for grid size 
+function setGrid(num, color) {                                   // function implementation for grid size 
 
     let cellWidth = (50 / num) + 'vw';                    // store cell heights/widths
     let cellHeight = (37 / num) + 'vw';
@@ -47,10 +47,22 @@ function setGrid(num) {                                   // function implementa
             rowDiv.className = 'grid-row';
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
 
-            let color = changeColor();
+
 
             rowDiv.addEventListener("click", function(event) {               // Change rowDiv color upon click
-                this.style.backgroundColor = color;
+                if (blackBtn.disabled === true) {
+                    let color = DEFAULT_COLOR;
+                    this.style.backgroundColor = color;
+                } else if (eraserBtn.disabled === true) {
+                    let color = 'white';
+                    this.style.backgroundColor = color;
+                } else if (colorBtn.disabled === true) {
+                    let color = colorSquare.value;
+                    this.style.backgroundColor = color;
+                } else {
+                    let color = 'red';
+                    this.style.backgroundColor = color;
+                }
             });
 
             columnDiv.appendChild(rowDiv);
@@ -61,7 +73,7 @@ function setGrid(num) {                                   // function implementa
 
 
 window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads
-    setGrid(value);                                     // Set to blackmode as default
+    setGrid(value, DEFAULT_COLOR);                                     // Set to blackmode as default
     blackMode();
 })
 
@@ -96,6 +108,8 @@ function blackMode() {                                                  // defau
     eraserBtn.removeAttribute('style');
     rainbowBtn.disabled = false;
     rainbowBtn.removeAttribute('style');
+
+    setGrid(value);
 };
 
 
@@ -108,6 +122,8 @@ colorBtn.addEventListener('click', () => {                          // color mod
     eraserBtn.removeAttribute('style');
     rainbowBtn.disabled = false;
     rainbowBtn.removeAttribute('style');
+
+    setGrid(value);
 });
 
 
@@ -123,6 +139,8 @@ eraserBtn.addEventListener('click', () => {                          // eraser m
     eraserBtn.setAttribute('style', 'background: gray;');
     rainbowBtn.disabled = false;
     rainbowBtn.removeAttribute('style');
+
+    setGrid(value);
 });
 
 
@@ -135,17 +153,19 @@ rainbowBtn.addEventListener('click', () => {                      // rainbow mod
     eraserBtn.removeAttribute('style');
     rainbowBtn.disabled = true;
     rainbowBtn.setAttribute('style', 'background: gray;');
+
+    setGrid(value);
 });
 
-function changeColor() {
-    if (blackBtn.disabled == true) {
-        return 'black';
-    } else if (eraserBtn.disabled == true) {
+/* function changeColor() {
+    if (blackBtn.disabled === true) {
+        return DEFAULT_COLOR;
+    } else if (eraserBtn.disabled === true) {
         return 'white';
-    } else if (colorBtn.disabled == true) {
+    } else if (colorBtn.disabled === true) {
         let x = colorSquare.value;
         return x;
     } else {
-        return 'green';
+        return 'red';
     }
-};
+}; */
