@@ -201,10 +201,6 @@ input:hover {
     position: relative;
 }
 
-.grid-row:hover {
-    background-color: gold;
-    opacity: 0.15;
-}
 
 .grid-column {
     flex: 1;
