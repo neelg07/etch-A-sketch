@@ -6,6 +6,7 @@
     margin-right: 25px;
     display: flex;
     overflow: visible;
+    background: white;
 }
 
 .square:after,
@@ -49,6 +50,11 @@
     text-align: center;
     font-size: larger;
     line-height: 30px;
+}
+
+body {
+    background-image: url('https://img.freepik.com/free-vector/beige-abstract-curved-background_53876-100992.jpg?w=2000');
+
 }
 
 .body {
@@ -210,7 +216,9 @@ input:hover {
   #demo {
     margin-top: 20px;
     margin-bottom: 10px;
+    font-size: 20px;
   }
+
 /* End of slider */
 
 /* Grid Pad CSS */
