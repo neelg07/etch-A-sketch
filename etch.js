@@ -65,7 +65,10 @@ function setGrid(num) {                                   // function implementa
                     } else if (colorBtn.disabled === true) {
                         this.style.backgroundColor = colorSquare.value;
                     } else {
-                        this.style.backgroundColor = 'red';
+                        const randomR = Math.floor(Math.random() * 256);
+                        const randomG = Math.floor(Math.random() * 256);
+                        const randomB = Math.floor(Math.random() * 256);
+                        this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
                     }
                 }
             });
@@ -79,7 +82,10 @@ function setGrid(num) {                                   // function implementa
                 } else if (colorBtn.disabled === true) {
                     this.style.backgroundColor = colorSquare.value;
                 } else {
-                    this.style.backgroundColor = 'red';
+                    const randomR = Math.floor(Math.random() * 256);
+                    const randomG = Math.floor(Math.random() * 256);
+                    const randomB = Math.floor(Math.random() * 256);
+                    this.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
                 }
             });
 
