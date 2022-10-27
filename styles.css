@@ -2,15 +2,33 @@
     width: 50vw;
     height: 37vw;
     position: relative;
-    border: 5px solid red;
+    border: 1px solid black;
     margin-right: 25px;
     display: flex;
     overflow: visible;
 }
 
+.square:after,
+.square:before {
+    content: '';
+    background: grey;
+    position: absolute;
+}
+
 .square:after {
-    display: block;
-    padding-bottom: 100%;
+    width: 100.25%;
+    height: 25px;
+    left: 10px;
+    bottom: 0;
+    transform: translateY(100%) translateX(-2px) skewX(45deg);
+}
+
+.square:before {
+    width: 20px;
+    height: 101%;
+    right: 0;
+    transform: translateX(100%) translateY(-2px) skewY(45deg);
+    top: 10px;
 }
 
 .container {
