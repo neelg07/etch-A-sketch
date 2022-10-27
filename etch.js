@@ -9,6 +9,8 @@ slider.oninput = function() {
 }
 
 
+
+
 // Grid formation
 let gridSize = document.querySelector('.slider');
 let value = parseInt(gridSize.value);
@@ -16,6 +18,8 @@ let value = parseInt(gridSize.value);
 gridSize.addEventListener("input", function() {
     value = parseInt(this.value);
 });
+
+
 
 
 const square = document.querySelector('.square');
@@ -28,6 +32,9 @@ changeSize.addEventListener('click', () => {
     }
     setGrid(value);
 });
+
+
+
 
 
 function setGrid(num) {                                   // function implementation for grid size 
@@ -47,24 +54,18 @@ function setGrid(num) {                                   // function implementa
             rowDiv.className = 'grid-row';
             rowDiv.setAttribute('style', `width: ${cellWidth}; height: ${cellHeight};`);
 
-
-
             rowDiv.addEventListener("mouseover", function(event) {               // Change rowDiv color upon click
                 
                 if (isClicked) {                                                // color hovered cells while mousedown
 
                     if (blackBtn.disabled === true) {
-                        let color = DEFAULT_COLOR;
-                        this.style.backgroundColor = color;
+                        this.style.backgroundColor = DEFAULT_COLOR;
                     } else if (eraserBtn.disabled === true) {
-                        let color = 'white';
-                        this.style.backgroundColor = color;
+                        this.style.backgroundColor = 'white';
                     } else if (colorBtn.disabled === true) {
-                        let color = colorSquare.value;
-                        this.style.backgroundColor = color;
+                        this.style.backgroundColor = colorSquare.value;
                     } else {
-                        let color = 'red';
-                        this.style.backgroundColor = color;
+                        this.style.backgroundColor = 'red';
                     }
                 }
             });
@@ -72,21 +73,15 @@ function setGrid(num) {                                   // function implementa
             rowDiv.addEventListener('click', function(event) {
 
                 if (blackBtn.disabled === true) {
-                    let color = DEFAULT_COLOR;
-                    this.style.backgroundColor = color;
+                    this.style.backgroundColor = DEFAULT_COLOR;
                 } else if (eraserBtn.disabled === true) {
-                    let color = 'white';
-                    this.style.backgroundColor = color;
+                    this.style.backgroundColor = 'white';
                 } else if (colorBtn.disabled === true) {
-                    let color = colorSquare.value;
-                    this.style.backgroundColor = color;
+                    this.style.backgroundColor = colorSquare.value;
                 } else {
-                    let color = 'red';
-                    this.style.backgroundColor = color;
+                    this.style.backgroundColor = 'red';
                 }
-            })
-
-
+            });
 
             columnDiv.appendChild(rowDiv);
         }
@@ -95,10 +90,17 @@ function setGrid(num) {                                   // function implementa
 }
 
 
+
+
+
+
 window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads                                     // Set to blackmode as default
     blackMode();
     setGrid(value);
 })
+
+
+
 
 
 
@@ -175,6 +177,9 @@ rainbowBtn.addEventListener('click', () => {                      // rainbow mod
     rainbowBtn.setAttribute('style', 'background: gray;');
 
 });
+
+
+
 
 
 // Mechanism to check for mouse drag function for coloring the grid
