@@ -30,10 +30,10 @@ changeSize.addEventListener('click', () => {
 });
 
 
-function setGrid(num, color) {                                   // function implementation for grid size 
+function setGrid(num) {                                   // function implementation for grid size 
 
-    let cellWidth = (50 / num) + 'vw';                    // store cell heights/widths
-    let cellHeight = (37 / num) + 'vw';
+    let cellWidth = `${(50 / num)}vw`;                    // store cell heights/widths
+    let cellHeight = `${(37 / num)}vw`;
 
     for (let i = 0; i < num; ++i) {                       // creating grid
 
@@ -70,7 +70,7 @@ function setGrid(num, color) {                                   // function imp
             });
 
             rowDiv.addEventListener('click', function(event) {
-                
+
                 if (blackBtn.disabled === true) {
                     let color = DEFAULT_COLOR;
                     this.style.backgroundColor = color;
@@ -95,9 +95,9 @@ function setGrid(num, color) {                                   // function imp
 }
 
 
-window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads
-    setGrid(value, DEFAULT_COLOR);                                     // Set to blackmode as default
+window.addEventListener('load', (event) => {            // Set grid on first page load and subsequent reloads                                     // Set to blackmode as default
     blackMode();
+    setGrid(value);
 })
 
 
@@ -132,7 +132,6 @@ function blackMode() {                                                  // defau
     rainbowBtn.disabled = false;
     rainbowBtn.removeAttribute('style');
 
-    setGrid(value);
 };
 
 
@@ -146,7 +145,6 @@ colorBtn.addEventListener('click', () => {                          // color mod
     rainbowBtn.disabled = false;
     rainbowBtn.removeAttribute('style');
 
-    setGrid(value);
 });
 
 
@@ -163,7 +161,6 @@ eraserBtn.addEventListener('click', () => {                          // eraser m
     rainbowBtn.disabled = false;
     rainbowBtn.removeAttribute('style');
 
-    setGrid(value);
 });
 
 
@@ -177,7 +174,6 @@ rainbowBtn.addEventListener('click', () => {                      // rainbow mod
     rainbowBtn.disabled = true;
     rainbowBtn.setAttribute('style', 'background: gray;');
 
-    setGrid(value);
 });
 
 

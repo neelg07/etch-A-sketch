@@ -38,6 +38,11 @@
     padding-bottom: 30px;
 }
 
+html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
 .hud {
     flex: 1 1 100%;
     display: flex;
